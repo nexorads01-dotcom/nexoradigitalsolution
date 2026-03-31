@@ -1,11 +1,10 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 
-// GitHub Pages will serve this site at:
-// https://nexorads01-dotcom.github.io/nexoradigitalsolution/
-// so we set the base path to match the repo name.
 export default defineConfig({
   plugins: [react()],
-  base: "/nexoradigitalsolution/",
+  // Use repo subpath only for GitHub Pages, root path elsewhere (e.g. Vercel).
+  base:
+    process.env.GITHUB_ACTIONS === "true" ? "/nexoradigitalsolution/" : "/",
 });
 

@@ -6,7 +6,7 @@ import { Toaster } from "./components/ui/sonner";
 function App() {
   return (
     <div className="App">
-      <BrowserRouter basename="/nexoradigitalsolution">
+      <BrowserRouter basename={import.meta.env.BASE_URL}>
         <Routes>
           <Route path="/" element={<LandingPage />} />
         </Routes>
